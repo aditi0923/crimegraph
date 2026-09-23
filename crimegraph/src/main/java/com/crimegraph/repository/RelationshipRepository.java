@@ -1,0 +1,14 @@
+package com.crimegraph.repository;
+
+import com.crimegraph.entity.Relationship;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface RelationshipRepository extends JpaRepository<Relationship, Long> {
+
+
+List<Relationship> findBySourcePersonIdOrTargetPersonId(
+        Long sourcePersonId,
+        Long targetPersonId
+);
+}
